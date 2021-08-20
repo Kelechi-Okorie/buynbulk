@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter, Route} from 'react-router-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 /* Pages */
@@ -13,7 +12,6 @@ ReactDOM.render(
     <BrowserRouter>
       <Route exact path="/" component={Home} />
     </BrowserRouter>
-    {/* <App /> */}
   </React.StrictMode>,
   document.getElementById('root')
 );

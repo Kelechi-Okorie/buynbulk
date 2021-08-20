@@ -29,13 +29,13 @@ import Divider from '@material-ui/core/Divider';
 const useStyles = makeStyles(theme => ({
     '@global': {
         body: {
-            backgroundColor: '#fff'
+            backgroundColor: '#ffffff'
         }
     },
 
     root: {
       flexGrow: 1,
-      borderBottom: '1px solid #d5e0d5'
+      borderBottom: '1px solid #d5e0d5',
     },
   
     flex: {
@@ -48,12 +48,14 @@ const useStyles = makeStyles(theme => ({
     },  
 
     loginButton: {
+        color: 'green',
         [theme.breakpoints.down('sm')]: {
             fontSize: '0.8rem',
         },
     },
 
     logoutButton: {
+        color: 'green',
         [theme.breakpoints.down('sm')]: {
             fontSize: '0.8rem',
         },
@@ -154,7 +156,7 @@ const Header = (props) => {
     
         return (
             <Toolbar>
-                <Grid container justify="space-between">
+                <Grid container justifyContent="space-between">
                     <Grid item>
                         {getLogo}
                     </Grid>
@@ -262,10 +264,10 @@ const Header = (props) => {
 
     const getLogInAndLogOutButtons = (
         <>
-            <Button variant="" color="secondary" className={classes.loginButton}>
+            <Button className={classes.loginButton}>
                 Login
             </Button>
-            <Button variant="" color="secondary" className={classes.logoutButton}>
+            <Button className={classes.logoutButton}>
                 Sign Up
             </Button>
         </>
@@ -276,7 +278,7 @@ const Header = (props) => {
         <div className={classes.root}>
             <CssBaseline />
             <HideOnScroll>
-                <AppBar position="fixed" color="transparent" elevation={0}>
+                <AppBar position="fixed" color="white" elevation={0}>
                     {mobileView ? displayMobile() : displayDeskTop()}
                 </AppBar>
             </HideOnScroll>
