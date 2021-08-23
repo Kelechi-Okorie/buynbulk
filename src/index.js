@@ -6,11 +6,13 @@ import reportWebVitals from './reportWebVitals';
 
 /* Pages */
 import Home from './pages/home';
+import ShoppingCart from './pages/shoppingCart';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Route exact path="/" component={Home} />
+      <Route exact path="/cart" component={ShoppingCart} />
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')

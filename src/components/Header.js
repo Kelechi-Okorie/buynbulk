@@ -1,14 +1,14 @@
 /* React imports */
 import React, {useState, useEffect} from 'react';
 
-/* styles */
-// import '../styles/Variables.css'
+/* custom components */
+import CartIcon from './CartIcon';
 
 /* Material-ui imports */
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, createTheme, ThemeProvider } from '@material-ui/core/styles';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Slide from "@material-ui/core/Slide";
 import PropTypes from 'prop-types';
@@ -25,6 +25,8 @@ import Box from '@material-ui/core/Box';
 import Clear from '@material-ui/icons/Clear';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import Divider from '@material-ui/core/Divider';
+
+// const theme = createTheme(theme)
 
 const useStyles = makeStyles(theme => ({
     '@global': {
@@ -48,14 +50,16 @@ const useStyles = makeStyles(theme => ({
     },  
 
     loginButton: {
-        color: 'green',
+        color: '#001E00',
+        textTransform: 'none',
         [theme.breakpoints.down('sm')]: {
             fontSize: '0.8rem',
         },
     },
 
     logoutButton: {
-        color: 'green',
+        color: '#001E00',
+        textTransform: 'none',
         [theme.breakpoints.down('sm')]: {
             fontSize: '0.8rem',
         },
@@ -244,7 +248,7 @@ const Header = (props) => {
                             </Grid>
                             <Grid item>
                                 <Box component="div" display="flex" alignItems="center">
-                                    <ShoppingCartOutlinedIcon />
+                                    <CartIcon />
                                 </Box>
                             </Grid>
                         </Grid>
@@ -258,7 +262,7 @@ const Header = (props) => {
 
     const getLogo = (
         <Typography variant="h6" component="span" className={classes.logo} >
-            Buy N Bulk
+            <Link href="/" variant="inherit" color="inherit" underline="none">Buy N Bulk</Link>
         </Typography>
     )
 
@@ -270,6 +274,7 @@ const Header = (props) => {
             <Button className={classes.logoutButton}>
                 Sign Up
             </Button>
+            <CartIcon />
         </>
     );
 

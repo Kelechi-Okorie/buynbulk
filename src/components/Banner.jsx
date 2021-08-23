@@ -51,7 +51,8 @@ function Banner(props) {
     const classes = useStyles(props)
     return (
         <>
-            <Grid item xs={12} sm={6}>
+            <Grid xs={false} md={1}></Grid>
+            <Grid item xs={12} sm={6} md={5}>
                 <Typography variant="h3" component="h1"
                     classes= {{
                         h3: classes.bannerTextPrimary
@@ -68,12 +69,13 @@ function Banner(props) {
                 </Typography>
             </Grid>
             <Hidden only="xs">
-                <Grid item sm={6}>
+                <Grid item sm={6} md={5}>
                     <figure className={classes.bannerFigure}>
                         <img src="food1.jpg" alt="image of food" className={classes.bannerImg} />
                     </figure>
                 </Grid>
             </Hidden>
+            <Grid xs={false} md={1}></Grid>
         </>
     )
 }

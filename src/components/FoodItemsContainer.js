@@ -2,11 +2,10 @@ import React from 'react';
 
 import CardFood from '../components/CardFood';
 import Grid from '@material-ui/core/Grid';
-import foodItems from '../adapters/constants';
+import foodItems from '../adapters/faker/constants';
 
 /* material-ui */
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
    

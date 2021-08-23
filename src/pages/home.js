@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Banner from '../components/Banner';
 import FoodItemsContainer from '../components/FoodItemsContainer';
+import HowItWorks from '../components/HowItWorks';
 
 /* Material-ui */
 import Grid from '@material-ui/core/Grid';
@@ -21,6 +22,12 @@ const useStyles = makeStyles(theme => ({
 
     banner: {
         padding: '30px 0'
+    },
+
+    howItWorks: {
+        backgroundColor: '#14A800',
+        color: '#F2F2F2',
+        padding: '5px'
     }
     
 }));
@@ -38,8 +45,8 @@ function Home(props) {
                 <Banner />
             </Grid>
             
-            <Grid item xs={12}>
-                <FoodItemsContainer />
+            <Grid item container xs={12} className={classes.howItWorks}>
+                <HowItWorks />
             </Grid>
 
             <Grid item xs={12}>
