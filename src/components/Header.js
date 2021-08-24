@@ -72,7 +72,7 @@ const useStyles = makeStyles(theme => ({
     },
 
     logo: {
-        color: 'green'
+        color: '#14A800'
     }
 
 }));

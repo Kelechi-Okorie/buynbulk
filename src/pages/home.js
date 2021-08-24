@@ -6,6 +6,8 @@ import Footer from '../components/Footer';
 import Banner from '../components/Banner';
 import FoodItemsContainer from '../components/FoodItemsContainer';
 import HowItWorks from '../components/HowItWorks';
+import CarouselElement from '../components/Carousel';
+import AvailableFoodItems from '../components/AvailableFoodItems';
 
 /* Material-ui */
 import Grid from '@material-ui/core/Grid';
@@ -19,19 +21,10 @@ const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1
     },
-
-    banner: {
-        padding: '30px 0'
-    },
-
-    howItWorks: {
-        backgroundColor: '#14A800',
-        color: '#F2F2F2',
-        padding: '5px'
-    }
     
 }));
 
+// Each component is a <Grid item xs={12}></Grid>
 function Home(props) {
     const classes = useStyles(props);
     return(
@@ -45,9 +38,12 @@ function Home(props) {
                 <Banner />
             </Grid>
             
-            <Grid item container xs={12} className={classes.howItWorks}>
-                <HowItWorks />
-            </Grid>
+            <CarouselElement />
+
+            <HowItWorks />
+
+            <AvailableFoodItems />
+            
 
             <Grid item xs={12}>
                 <Footer />

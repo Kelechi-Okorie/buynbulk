@@ -11,7 +11,8 @@ import Hidden from '@material-ui/core/Hidden';
 
 const useStyles = makeStyles(theme => ({
     root: {
-        flexGrow: 1
+        flexGrow: 1,
+        padding: '30px 0'
     },
     bannerTextPrimary: {
         fontSize: '48px',
@@ -34,7 +35,9 @@ const useStyles = makeStyles(theme => ({
         height: '100%',
         margin: '0',
         padding: '0',
-        clipPath: 'circle(39% at 50% 50%)'
+        [theme.breakpoints.up('sm')]: {
+            clipPath: 'circle(39% at 50% 50%)'
+        }
     },
     bannerImg: {
         width: '100%',
@@ -50,7 +53,7 @@ const useStyles = makeStyles(theme => ({
 function Banner(props) {
     const classes = useStyles(props)
     return (
-        <>
+        <Grid item container xs={12} className={classes.root}>
             <Grid xs={false} md={1}></Grid>
             <Grid item xs={12} sm={6} md={5}>
                 <Typography variant="h3" component="h1"
@@ -68,7 +71,7 @@ function Banner(props) {
                     Contribute money with other people to buy foodstuffs in bulk and share
                 </Typography>
             </Grid>
-            <Hidden only="xs">
+            <Hidden /* only="xs" */>
                 <Grid item sm={6} md={5}>
                     <figure className={classes.bannerFigure}>
                         <img src="food1.jpg" alt="image of food" className={classes.bannerImg} />
@@ -76,7 +79,7 @@ function Banner(props) {
                 </Grid>
             </Hidden>
             <Grid xs={false} md={1}></Grid>
-        </>
+        </Grid>
     )
 }
 

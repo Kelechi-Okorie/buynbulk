@@ -8,14 +8,14 @@ import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 import BusinessIcon from '@material-ui/icons/Business';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import Divider from '@material-ui/core/Divider';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import Avatar from '@material-ui/core/Avatar';
 
 const useStyles = makeStyles(theme => ({
     root: {
-        flexGrow: 1
+        backgroundColor: '#14A800',
+        color: '#F2F2F2',
+        padding: '15px'
     },
 
     listContainer: {
@@ -28,24 +28,26 @@ const useStyles = makeStyles(theme => ({
     heading: {
         marginBottom: '40px',
         paddingRight: '12px',
-        // boxSizing: 'border-box'
     },
     
     headingPrimary: {
         [theme.breakpoints.up("sm")]: {
             // textAlign: 'center'
         }
+    },
+    listItemTextPrimary: {
+        fontSize: '1.2rem'
     }
 }));
 
 function HowItWorks(props) {
     const classes = useStyles(props);
     return (
-        <>
+        <Grid item container xs={12} className={classes.root}>
             <Grid xs={false} md={1}></Grid>
             <Grid item xs={12} sm={6} md={5} className={classes.heading}>
                 <Typography variant="h4" className={classes.headingPrimary}>How it works</Typography>
-                <Typography variant="h6" className={classes.headingSecondary}>Bulk Food Market is a platform that provides access to affordable, quality and nutritious foods </Typography>
+                <Typography variant="h6" className={classes.headingSecondary}>Bulk Food Market is an Agritech platform that provides access to affordable, quality and nutritious foods </Typography>
             </Grid>
             <Grid item container xs={12} sm={6} md={5}>
                 <Grid item sm={12}>
@@ -61,6 +63,7 @@ function HowItWorks(props) {
                                         Connect and crowdsource funds to buy foodstuffs in bulk and share to save cost
                                     </Typography>
                                 }
+                                classes={{primary: classes.listItemTextPrimary}}
                             />
                         </ListItem>
                     </List>
@@ -78,13 +81,14 @@ function HowItWorks(props) {
                                         Get food directly from producers for the cheapest possible price and best quality
                                     </Typography>
                                 }
+                                classes={{primary: classes.listItemTextPrimary}}
                             />
                         </ListItem>
                     </List>
                 </Grid>
             </Grid>
             <Grid xs={false} md={1}></Grid>
-        </>
+        </Grid>
     )
 }
 
