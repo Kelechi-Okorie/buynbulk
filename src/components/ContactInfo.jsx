@@ -22,7 +22,7 @@ const styles = makeStyles(theme => ({
     }
 }));
 
-function Contacts(props) {
+function ContactInfo(props) {
     const classes = styles(props);
     return (
         <Grid container>
@@ -61,4 +61,4 @@ function Contacts(props) {
     )
 }
 
-export default Contacts
+export default ContactInfo;

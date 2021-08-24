@@ -1,7 +1,7 @@
 import React from 'react';
 
 /* custom components */
-import Contacts from './Contacts';
+import ContactInfo from './ContactInfo';
 import FooterLinks from './FooterLinks';
 
 /* material-ui */
@@ -19,9 +19,9 @@ const useStyles = makeStyles(theme => ({
 function Footer(props) {
     const classes = useStyles(props);
     return (
-        <Grid container className={classes.root}>
+        <Grid item container className={classes.root}>
             <Grid item xs={12}>
-                <Contacts />
+                <ContactInfo />
             </Grid>
 
             <Grid item xs={12}>

@@ -1,5 +1,8 @@
 import React from 'react';
 
+/* custom */
+import WhatsAppButton from './WhatsAppButton';
+
 /* Material-ui */
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
@@ -8,12 +11,19 @@ import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import Paper from '@material-ui/core/Paper';
 import Hidden from '@material-ui/core/Hidden';
+import Button from '@material-ui/core/Button';
+
 
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
         padding: '30px 0'
     },
+
+    bannerText: {
+        // marginBottom: '20px'
+    },
+
     bannerTextPrimary: {
         fontSize: '48px',
         lineHeight: '65px',
@@ -46,16 +56,14 @@ const useStyles = makeStyles(theme => ({
     box: {
         padding: '20px'
     }
-}))
-
-
+}));
 
 function Banner(props) {
     const classes = useStyles(props)
     return (
         <Grid item container xs={12} className={classes.root}>
             <Grid xs={false} md={1}></Grid>
-            <Grid item xs={12} sm={6} md={5}>
+            <Grid item xs={12} sm={6} md={5} className={classes.bannerText}>
                 <Typography variant="h3" component="h1"
                     classes= {{
                         h3: classes.bannerTextPrimary
@@ -70,6 +78,13 @@ function Banner(props) {
                 >
                     Contribute money with other people to buy foodstuffs in bulk and share
                 </Typography>
+
+                <Box component="div" display="flex" justifyContent="space-around" p={2}>
+                    <Button href="/contact" variant="contained" color="primary" style={{borderRadius: '16px'}}>
+                        Contact Us
+                    </Button>
+                    <WhatsAppButton variant="outlined" />
+                </Box>
             </Grid>
             <Hidden /* only="xs" */>
                 <Grid item sm={6} md={5}>

@@ -8,13 +8,14 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import Box from '@material-ui/core/Box';
 import Chip from '@material-ui/core/Chip'
 
 
 const useStyles = makeStyles((theme) => ({
 
     root: {
-        backgroundColor: '#D5E0D5',
+        // backgroundColor: '#D5E0D5',
         padding: '30px 15px',
     },
 
@@ -39,6 +40,9 @@ function AvailableFoodItems(props) {
 
     return (
         <Grid item container xs={12} className={classes.root}>
+            <Grid item xs={12}>
+                <Box><Typography variant="h5" component="h2">Available food items</Typography></Box>
+            </Grid>
             <Grid item xs={12} className={classes.foodsContainer}>
                 <Chip label="Tomatoes (fresh)" classes={{root: classes.foodItem}}/>
                 <Chip label="Groundnut Oil" classes={{root: classes.foodItem}}/>

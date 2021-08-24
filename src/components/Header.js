@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react';
 
 /* custom components */
 import CartIcon from './CartIcon';
+import WhatsAppButton from './WhatsAppButton';
 
 /* Material-ui imports */
 import AppBar from '@material-ui/core/AppBar';
@@ -25,6 +26,7 @@ import Box from '@material-ui/core/Box';
 import Clear from '@material-ui/icons/Clear';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import Divider from '@material-ui/core/Divider';
+import Hidden from '@material-ui/core/Hidden';
 
 // const theme = createTheme(theme)
 
@@ -72,7 +74,10 @@ const useStyles = makeStyles(theme => ({
     },
 
     logo: {
-        color: '#14A800'
+        fontSize: '1.5rem'
+    },
+    hamburgerMenu: {
+        fontSize: '5rem',
     }
 
 }));
@@ -80,16 +85,12 @@ const useStyles = makeStyles(theme => ({
 
 const headersData = [
     {
-      label: "Listings",
-      href: "/listings",
+      label: "About Us",
+      href: "/about",
     },
     {
-      label: "Mentors",
-      href: "/mentors",
-    },
-    {
-      label: "My Account",
-      href: "/account",
+      label: "Contact Us",
+      href: "/contact",
     }
 ];
 
@@ -115,180 +116,120 @@ HideOnScroll.propTypes = {
 
 const Header = (props) => {
     const classes = useStyles(props);
+    const [drawerOpen, setDrawerOpen] = useState(false);
 
-    const [state, setState] = useState({
-        mobileView: false,
-        drawerOpen: false
-    });
+    const handleDrawerClose = () => setDrawerOpen(false);
+    const handleDrawerOpen = () => setDrawerOpen(true);
 
-    const {mobileView, drawerOpen} = state;
 
-    useEffect(() => {
-        const setResponsiveness = () => {
-            return window.innerWidth < 900 
-                ? setState(prevState => ({...prevState, mobileView: true}))
-                : setState(prevState => ({...prevState, mobileView: false}));
-        }
-
-        setResponsiveness();
-
-        window.addEventListener('resize', () => setResponsiveness());
-
-        return () => {
-            window.removeEventListener('resize', setResponsiveness);
-        }
-    }, []);
-
-    const displayDeskTop = () => {
-        const getMenuButtons = () => {
-            return headersData.map(({label, href}) => {
-                return (
-                    <Button
-                    {...{
-                        key: label,
-                        color: "inherit",
-                        to: href,
-                        component: Link,
-                        
-                    }}
-                    >
-                        {label}
-                    </Button>
-                )
-            })
-        }
-    
-        return (
-            <Toolbar>
-                <Grid container justifyContent="space-between">
-                    <Grid item>
-                        {getLogo}
-                    </Grid>
-                    <Grid item>
-                        <div>
-                            {getMenuButtons()}
-                        </div>
-                    </Grid>
-                    <Grid item>
-                        <div>
-                            {getLogInAndLogOutButtons}
-                        </div>
-                    </Grid>
-                </Grid>
-            </Toolbar>
-        )
+    const getMenu = () => {
+        return headersData.map(({label, href}) => {
+            return (
+                <Button
+                {...{
+                    key: label,
+                    to: href,
+                    component: Link,
+                    
+                }}
+                >
+                    {label}
+                </Button>
+            )
+        })
     }
 
     
-    const displayMobile = () => {
-        const handleDrawerOpen = () => setState(prevState => ({...prevState, drawerOpen: true}));
-        const handleDrawerClose = () => setState(prevState => ({...prevState, drawerOpen: false}));
-
-        const getDrawerChoices = () => {
-            return headersData.map(({label, href}) => {
-                return (
-                    <Link
-                        {...{
-                            component: Link,
-                            to: href,
-                            color: "inherit",
-                            style: {textDecoration: "none"},
-                            key: label
-                        }}
-                    >
-                        <MenuItem>{label}</MenuItem>
-                    </Link>
-                )
-            })
-        }
-
-        return (
-            <Toolbar>
-                <Grid container justify="space-between" >
-                    <Grid item>
-                        <Box component="div" display="flex" alignItems="center">
-                            <IconButton
-                            {...{
-                                edge: "start",
-                                color: "inherit",
-                                "arial-label": "menu",
-                                "arial-haspopup": "true",
-                                onClick: handleDrawerOpen
-                            }}
-                            >
-                            <DehazeIcon />
-                            </IconButton>
-                            {getLogo}
-                        </Box>
-                    </Grid>
-                    <Grid item>
-                        <Box component="div" display="flex" alignItems="center" height="100%">
-                            {getLogInAndLogOutButtons}
-                        </Box>
-                    </Grid>
-                </Grid>
-
-                <Drawer
-                {...{
-                    anchor: "left",
-                    open: drawerOpen,
-                    onClose: handleDrawerClose
-                }}
-                classes= {{
-                    paper: classes.drawerPaper
-                }}
+    const getDrawerChoices = () => {
+        return headersData.map(({label, href}) => {
+            return (
+                <Link
+                    {...{
+                        component: Link,
+                        to: href,
+                        color: "inherit",
+                        style: {textDecoration: "none"},
+                        key: label
+                    }}
                 >
-                    <Box p={1.3}>
-                        <Grid container justify="space-between" p={10}>
-                            <Grid item>
-                                <Box component="div" display="flex" alignItems="center">
-                                    <Clear onClick={handleDrawerClose} mr={3}/>
-                                    {getLogo}
-                                </Box>
-                            </Grid>
-                            <Grid item>
-                                <Box component="div" display="flex" alignItems="center">
-                                    <CartIcon />
-                                </Box>
-                            </Grid>
-                        </Grid>
-                    </Box>
-                    <Divider />
-                    <div>{getDrawerChoices()}</div>
-                </Drawer>
-            </Toolbar>
-        )
+                    <MenuItem>{label}</MenuItem>
+                </Link>
+            )
+        })
     }
 
     const getLogo = (
         <Typography variant="h6" component="span" className={classes.logo} >
-            <Link href="/" variant="inherit" color="inherit" underline="none">Buy N Bulk</Link>
+            <Link href="/" variant="inherit"  underline="none">Buy N Bulk</Link>
         </Typography>
     )
 
-    const getLogInAndLogOutButtons = (
-        <>
-            <Button className={classes.loginButton}>
-                Login
-            </Button>
-            <Button className={classes.logoutButton}>
-                Sign Up
-            </Button>
-            <CartIcon />
-        </>
-    );
-
-
     return (
-        <div className={classes.root}>
+        <Grid sx={12}>
+            <div className={classes.root}>
             <CssBaseline />
             <HideOnScroll>
-                <AppBar position="fixed" color="white" elevation={0}>
-                    {mobileView ? displayMobile() : displayDeskTop()}
+                <AppBar /* position="fixed" */ color="white" elevation={0}>
+                    <Toolbar>
+                        <Drawer
+                            {...{
+                                anchor: "left",
+                                open: drawerOpen,
+                                onClose: handleDrawerClose
+                            }}
+                            classes= {{
+                                paper: classes.drawerPaper
+                            }}
+                        >
+                            <Box p={1.3}>
+                                <Grid container justify="space-between" p={10}>
+                                    <Grid item xs={12}>
+                                        <Box display="flex" justifyContent="space-between" alignItems="center">
+                                            <Box display="flex" alignItems="center" >
+                                                <IconButton>
+                                                    <Clear onClick={handleDrawerClose} mr={3}/>
+                                                </IconButton>
+                                                {getLogo}
+                                            </Box>
+                                            <WhatsAppButton />
+                                        </Box>
+                                    </Grid>
+                                    
+                                </Grid>
+                            </Box>
+                            <Divider />
+                            <div>{getDrawerChoices()}</div>
+                        </Drawer>
+
+                        <IconButton
+                        {...{
+                            edge: "start",
+                            color: "inherit",
+                            "arial-label": "menu",
+                            "arial-haspopup": "true",
+                            onClick: handleDrawerOpen
+                        }}
+                        >
+                            <DehazeIcon />
+                        </IconButton>
+                        {getLogo}
+                        
+                        <Box component="span" style={{marginLeft: 'auto'}}>
+                            <Hidden smDown>
+                                <Box display="inline">
+                                    {getMenu}
+                                </Box>
+                            </Hidden>
+
+                            <WhatsAppButton />
+                        </Box>
+                    </Toolbar>
+
                 </AppBar>
             </HideOnScroll>
             <div className={classes.offset} />
         </div>
+        </Grid>
     )
 };
 export default Header

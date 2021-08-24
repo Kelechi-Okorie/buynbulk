@@ -30,25 +30,16 @@ function Home(props) {
     return(
         <Grid container direction="column" className={classes.root}>
 
-            <Grid item xs={12}>
-                <Header />
-            </Grid>
+            <Header />
 
-            <Grid item container className={classes.banner} xs={12}>
-                <Banner />
-            </Grid>
+            <Banner />
             
             <CarouselElement />
 
             <HowItWorks />
 
             <AvailableFoodItems />
-            
-
-            <Grid item xs={12}>
-                <Footer />
-            </Grid>
-
+            <Footer />
 
         </Grid>
     )
