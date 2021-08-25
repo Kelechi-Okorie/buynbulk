@@ -46,25 +46,8 @@ const useStyles = makeStyles(theme => ({
       flex: 1,
     },
   
-    MenuButton: {
-      marginLeft: -12,
-      marginRight: 20,
-    },  
-
-    loginButton: {
-        color: '#001E00',
+    headerMenu: {
         textTransform: 'none',
-        [theme.breakpoints.down('sm')]: {
-            fontSize: '0.8rem',
-        },
-    },
-
-    logoutButton: {
-        color: '#001E00',
-        textTransform: 'none',
-        [theme.breakpoints.down('sm')]: {
-            fontSize: '0.8rem',
-        },
     },
 
     offset: theme.mixins.toolbar,
@@ -76,9 +59,9 @@ const useStyles = makeStyles(theme => ({
     logo: {
         fontSize: '1.5rem'
     },
-    hamburgerMenu: {
-        fontSize: '5rem',
-    }
+    // hamburgerMenu: {
+    //     display: 'none'
+    // }
 
 }));
 
@@ -122,7 +105,7 @@ const Header = (props) => {
     const handleDrawerOpen = () => setDrawerOpen(true);
 
 
-    const getMenu = () => {
+    const getMenu = ({headerMenu}) => {
         return headersData.map(({label, href}) => {
             return (
                 <Button
@@ -132,6 +115,7 @@ const Header = (props) => {
                     component: Link,
                     
                 }}
+                className={headerMenu}
                 >
                     {label}
                 </Button>
@@ -201,23 +185,26 @@ const Header = (props) => {
                             <div>{getDrawerChoices()}</div>
                         </Drawer>
 
-                        <IconButton
-                        {...{
-                            edge: "start",
-                            color: "inherit",
-                            "arial-label": "menu",
-                            "arial-haspopup": "true",
-                            onClick: handleDrawerOpen
-                        }}
-                        >
-                            <DehazeIcon />
-                        </IconButton>
+                        <Hidden mdUp>
+                            <IconButton
+                            {...{
+                                edge: "start",
+                                color: "inherit",
+                                "arial-label": "menu",
+                                "arial-haspopup": "true",
+                                onClick: handleDrawerOpen
+                            }}
+                            className={classes.hamburgerMenu}
+                            >
+                                <DehazeIcon />
+                            </IconButton>
+                        </Hidden>
                         {getLogo}
                         
                         <Box component="span" style={{marginLeft: 'auto'}}>
                             <Hidden smDown>
                                 <Box display="inline">
-                                    {getMenu}
+                                    {getMenu({...classes})}
                                 </Box>
                             </Hidden>
 

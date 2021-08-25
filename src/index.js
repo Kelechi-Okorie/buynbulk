@@ -8,6 +8,7 @@ import reportWebVitals from './reportWebVitals';
 import Home from './pages/home';
 import ShoppingCart from './pages/shoppingCart';
 import Contact from './pages/contact';
+import About from './pages/about';
 
 /* material-ui */
 import { createTheme, ThemeProvider } from '@material-ui/core/styles';
@@ -30,6 +31,7 @@ ReactDOM.render(
         <Route exact path="/" component={Home} />
         <Route exact path="/cart" component={ShoppingCart} />
         <Route exact path="/contact" component={Contact} />
+        <Route exact path="/about" component={About} />
       </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>,

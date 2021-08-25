@@ -4,6 +4,7 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import MessageBox from '../components/MessageBox';
+import PageHeading from '../components/PageHeading';
 
 /* material-ui */
 import Link from '@material-ui/core/Link';
@@ -14,7 +15,7 @@ const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1
     }
-}))
+}));
 
 function Contact(props) {
     const classes = useStyles(props)
@@ -22,7 +23,10 @@ function Contact(props) {
         <Grid container direction="column" className={classes.root}>
             <Header />
 
-            <MessageBox />
+
+            <MessageBox>                
+                <PageHeading primary="Contact Us" />
+            </MessageBox>
 
             <Footer />
         </Grid>
