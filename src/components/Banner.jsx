@@ -2,6 +2,7 @@ import React from 'react';
 
 /* custom */
 import WhatsAppButton from './WhatsAppButton';
+import BannerImage from '../img/food1.jpg'
 
 /* Material-ui */
 import Container from '@material-ui/core/Container';
@@ -89,7 +90,8 @@ function Banner(props) {
             <Hidden /* only="xs" */>
                 <Grid item sm={6} md={5}>
                     <figure className={classes.bannerFigure}>
-                        <img src="food1.jpg" alt="image of food" className={classes.bannerImg} />
+                        {/* <img src="food1.jpg" alt="image of food" className={classes.bannerImg} /> */}
+                        <img src={BannerImage} alt="image of food" className={classes.bannerImg} />
                     </figure>
                 </Grid>
             </Hidden>
