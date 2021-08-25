@@ -9,7 +9,8 @@ const useStyles = makeStyles(theme => ({
     carouselItem: {
         backgroundColor: theme.palette.background.paper,
         color: '#14A800',
-        textAlign: 'center'
+        textAlign: 'center',
+        padding: '10px 0'
     }
 }))
 

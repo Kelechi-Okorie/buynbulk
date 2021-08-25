@@ -3,6 +3,8 @@ import React from 'react';
 /* custom */
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import MessageBox from '../components/MessageBox';
+
 /* material-ui */
 import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
@@ -20,7 +22,7 @@ function Contact(props) {
         <Grid container direction="column" className={classes.root}>
             <Header />
 
-            
+            <MessageBox />
 
             <Footer />
         </Grid>

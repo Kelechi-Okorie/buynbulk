@@ -19,6 +19,9 @@ function About(props) {
     const classes = useStyles(props);
     return (
         <Grid container direction="column" className={classes.root}>
+            <Header />
+
+            <Footer />
 
         </Grid>
     )

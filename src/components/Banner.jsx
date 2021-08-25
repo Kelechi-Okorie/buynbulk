@@ -17,7 +17,7 @@ import Button from '@material-ui/core/Button';
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
-        padding: '30px 0'
+        padding: '20px 0 0'
     },
 
     bannerText: {

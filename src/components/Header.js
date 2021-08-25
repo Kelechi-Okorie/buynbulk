@@ -128,7 +128,7 @@ const Header = (props) => {
                 <Button
                 {...{
                     key: label,
-                    to: href,
+                    href: href,
                     component: Link,
                     
                 }}
@@ -146,7 +146,7 @@ const Header = (props) => {
                 <Link
                     {...{
                         component: Link,
-                        to: href,
+                        href: href,
                         color: "inherit",
                         style: {textDecoration: "none"},
                         key: label
