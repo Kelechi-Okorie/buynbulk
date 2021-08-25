@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/Kelechi-Okorie/buynbulk/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/Kelechi-Okorie/buynbulk/static/js/main.111eba7a.chunk.js",
-    "main.js.map": "/Kelechi-Okorie/buynbulk/static/js/main.111eba7a.chunk.js.map",
-    "runtime-main.js": "/Kelechi-Okorie/buynbulk/static/js/runtime-main.5384be33.js",
-    "runtime-main.js.map": "/Kelechi-Okorie/buynbulk/static/js/runtime-main.5384be33.js.map",
-    "static/js/2.5107d542.chunk.js": "/Kelechi-Okorie/buynbulk/static/js/2.5107d542.chunk.js",
-    "static/js/2.5107d542.chunk.js.map": "/Kelechi-Okorie/buynbulk/static/js/2.5107d542.chunk.js.map",
-    "static/js/3.3eb2e0d2.chunk.js": "/Kelechi-Okorie/buynbulk/static/js/3.3eb2e0d2.chunk.js",
-    "static/js/3.3eb2e0d2.chunk.js.map": "/Kelechi-Okorie/buynbulk/static/js/3.3eb2e0d2.chunk.js.map",
-    "index.html": "/Kelechi-Okorie/buynbulk/index.html",
-    "static/css/main.6dea0f05.chunk.css.map": "/Kelechi-Okorie/buynbulk/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.5107d542.chunk.js.LICENSE.txt": "/Kelechi-Okorie/buynbulk/static/js/2.5107d542.chunk.js.LICENSE.txt"
+    "main.css": "/buynbulk/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/buynbulk/static/js/main.a71b3efe.chunk.js",
+    "main.js.map": "/buynbulk/static/js/main.a71b3efe.chunk.js.map",
+    "runtime-main.js": "/buynbulk/static/js/runtime-main.a16f4352.js",
+    "runtime-main.js.map": "/buynbulk/static/js/runtime-main.a16f4352.js.map",
+    "static/js/2.5107d542.chunk.js": "/buynbulk/static/js/2.5107d542.chunk.js",
+    "static/js/2.5107d542.chunk.js.map": "/buynbulk/static/js/2.5107d542.chunk.js.map",
+    "static/js/3.3eb2e0d2.chunk.js": "/buynbulk/static/js/3.3eb2e0d2.chunk.js",
+    "static/js/3.3eb2e0d2.chunk.js.map": "/buynbulk/static/js/3.3eb2e0d2.chunk.js.map",
+    "index.html": "/buynbulk/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/buynbulk/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.5107d542.chunk.js.LICENSE.txt": "/buynbulk/static/js/2.5107d542.chunk.js.LICENSE.txt",
+    "static/media/food1.8e36128a.jpg": "/buynbulk/static/media/food1.8e36128a.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.5384be33.js",
+    "static/js/runtime-main.a16f4352.js",
     "static/js/2.5107d542.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.111eba7a.chunk.js"
+    "static/js/main.a71b3efe.chunk.js"
   ]
 }
