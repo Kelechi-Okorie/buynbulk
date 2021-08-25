@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Kelechi-Okorie/buynbulk/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/Kelechi-Okorie/buynbulk/static/js/main.111eba7a.chunk.js",
+    "main.js.map": "/Kelechi-Okorie/buynbulk/static/js/main.111eba7a.chunk.js.map",
+    "runtime-main.js": "/Kelechi-Okorie/buynbulk/static/js/runtime-main.5384be33.js",
+    "runtime-main.js.map": "/Kelechi-Okorie/buynbulk/static/js/runtime-main.5384be33.js.map",
+    "static/js/2.5107d542.chunk.js": "/Kelechi-Okorie/buynbulk/static/js/2.5107d542.chunk.js",
+    "static/js/2.5107d542.chunk.js.map": "/Kelechi-Okorie/buynbulk/static/js/2.5107d542.chunk.js.map",
+    "static/js/3.3eb2e0d2.chunk.js": "/Kelechi-Okorie/buynbulk/static/js/3.3eb2e0d2.chunk.js",
+    "static/js/3.3eb2e0d2.chunk.js.map": "/Kelechi-Okorie/buynbulk/static/js/3.3eb2e0d2.chunk.js.map",
+    "index.html": "/Kelechi-Okorie/buynbulk/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/Kelechi-Okorie/buynbulk/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.5107d542.chunk.js.LICENSE.txt": "/Kelechi-Okorie/buynbulk/static/js/2.5107d542.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5384be33.js",
+    "static/js/2.5107d542.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.111eba7a.chunk.js"
+  ]
+}
