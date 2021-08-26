@@ -26,7 +26,7 @@ const theme = createTheme({
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/">
       <ThemeProvider theme={theme}>
         <Route exact path="/" component={Home} />
         <Route exact path="/cart" component={ShoppingCart} />
