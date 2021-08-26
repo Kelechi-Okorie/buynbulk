@@ -119,9 +119,9 @@ const Header = (props) => {
 
 
     const getMenu = ({headerMenu}) => {
-        return headersData.map(({label, href}) => {
+        return headersData.map(({label, href}, index) => {
             return (
-                <Button
+                <Button key={index}
                 {...{
                     key: label,
                     href: href,
@@ -138,10 +138,10 @@ const Header = (props) => {
 
     
     const getDrawerChoices = () => {
-        const listItems = headersData.map(({label, href}) => {
+        const listItems = headersData.map(({label, href}, index) => {
             return (
                 <Paper square elevation={0} className={classes.drawerListItemPaper}>                    
-                    <ListItem button component="a" color="primary" href={href}>
+                    <ListItem key={index} button component="a" color="primary" href={href}>
                         <ListItemText primary={label} />
                     </ListItem>
                 </Paper>
@@ -166,7 +166,7 @@ const Header = (props) => {
             <div className={classes.root}>
             <CssBaseline />
             <HideOnScroll>
-                <AppBar /* position="fixed" */ color="white" elevation={0}>
+                <AppBar /* position="fixed" */ color="inherit" elevation={0}>
                     <Toolbar>
                         <Drawer
                             {...{
