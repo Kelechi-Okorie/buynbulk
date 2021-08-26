@@ -5,36 +5,38 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 /* Pages */
-import Home from './pages/home';
-import ShoppingCart from './pages/shoppingCart';
-import Contact from './pages/contact';
-import About from './pages/about';
+// import Home from './pages/home';
+// import ShoppingCart from './pages/shoppingCart';
+// import Contact from './pages/contact';
+// import About from './pages/about';
+import App from './App'
 
 /* material-ui */
-import { createTheme, ThemeProvider } from '@material-ui/core/styles';
+// import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      light: '#53D33F', 
-      main: '#14A800',
-      dark: '#138900'
+// const theme = createTheme({
+//   palette: {
+//     primary: {
+//       light: '#53D33F', 
+//       main: '#14A800',
+//       dark: '#138900'
       
-    }
-  }
-})
+//     }
+//   }
+// })
 
 ReactDOM.render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <ThemeProvider theme={theme}>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/cart" component={ShoppingCart} />
-        <Route exact path="/contact" component={Contact} />
-        <Route exact path="/about" component={About} />
-      </ThemeProvider>
-    </BrowserRouter>
-  </React.StrictMode>,
+  // <React.StrictMode>
+  //   <BrowserRouter>
+  //     <ThemeProvider theme={theme}>
+  //       <Route exact path="/" component={Home} />
+  //       <Route exact path="/cart" component={ShoppingCart} />
+  //       <Route exact path="/contact" component={Contact} />
+  //       <Route exact path="/about" component={About} />
+  //     </ThemeProvider>
+  //   </BrowserRouter>
+  // </React.StrictMode>,
+  <App />,
   document.getElementById('root')
 );
 
