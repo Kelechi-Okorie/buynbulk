@@ -63,13 +63,6 @@ let ContinueShoppingButton = (props) => {
     );
 }
 
-let OrderSummaryLG = (props) => {
-
-}
-
-let ItemsDetails = (props) => {
-
-}
 
 function ShoppingCart(props) {
     const classes = useStyles(props);
