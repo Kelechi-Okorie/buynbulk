@@ -27,6 +27,10 @@ import Clear from '@material-ui/icons/Clear';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 import Divider from '@material-ui/core/Divider';
 import Hidden from '@material-ui/core/Hidden';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import Paper from '@material-ui/core/Paper';
 
 // const theme = createTheme(theme)
 
@@ -53,7 +57,20 @@ const useStyles = makeStyles(theme => ({
     offset: theme.mixins.toolbar,
 
     drawerPaper: {
-        width: '100%'
+        width: '100%',
+        backgroundColor: '#FAFAFA',
+    },
+
+    drawerHeadingPaper: {
+        border: 'none',
+        padding: theme.spacing(0.8)
+    },
+    drawerHeading: {
+
+    },
+
+    drawerListItemPaper: {
+        marginBottom: theme.spacing(0.2)
     },
 
     logo: {
@@ -61,7 +78,7 @@ const useStyles = makeStyles(theme => ({
     },
     // hamburgerMenu: {
     //     display: 'none'
-    // }
+    // };
 
 }));
 
@@ -74,6 +91,10 @@ const headersData = [
     {
       label: "Contact Us",
       href: "/contact",
+    },
+    {
+        label: 'Become a member',
+        href: '/register'
     }
 ];
 
@@ -125,21 +146,21 @@ const Header = (props) => {
 
     
     const getDrawerChoices = () => {
-        return headersData.map(({label, href}) => {
+        const listItems = headersData.map(({label, href}) => {
             return (
-                <Link
-                    {...{
-                        component: Link,
-                        href: href,
-                        color: "inherit",
-                        style: {textDecoration: "none"},
-                        key: label
-                    }}
-                >
-                    <MenuItem>{label}</MenuItem>
-                </Link>
-            )
-        })
+                <Paper square elevation={0} className={classes.drawerListItemPaper}>                    
+                    <ListItem button component="a" color="primary" href={href}>
+                        <ListItemText primary={label} />
+                    </ListItem>
+                </Paper>
+            );
+        });
+
+        return (
+            <List>
+                {listItems}
+            </List>
+        );
     }
 
     const getLogo = (
@@ -164,24 +185,27 @@ const Header = (props) => {
                             classes= {{
                                 paper: classes.drawerPaper
                             }}
+                            className={classes.drawer}
                         >
-                            <Box p={1.3}>
-                                <Grid container justify="space-between" p={10}>
-                                    <Grid item xs={12}>
-                                        <Box display="flex" justifyContent="space-between" alignItems="center">
-                                            <Box display="flex" alignItems="center" >
-                                                <IconButton>
-                                                    <Clear onClick={handleDrawerClose} mr={3}/>
-                                                </IconButton>
-                                                {getLogo}
+                            <Box className={classes.drawerHeading}>
+                                <Paper square variant="outlined" classes={{root: classes.drawerHeadingPaper}}>
+                                    <Grid container justify="space-between" p={10}>
+                                        <Grid item xs={12}>
+                                            <Box display="flex" justifyContent="space-between" alignItems="center">
+                                                <Box display="flex" alignItems="center" >
+                                                    <IconButton>
+                                                        <Clear onClick={handleDrawerClose} mr={3}/>
+                                                    </IconButton>
+                                                    {getLogo}
+                                                </Box>
+                                                <WhatsAppButton /* style={{marginRight: '2%'}} */ />
                                             </Box>
-                                            <WhatsAppButton />
-                                        </Box>
+                                        </Grid>
+                                        
                                     </Grid>
-                                    
-                                </Grid>
+                                </Paper>
                             </Box>
-                            <Divider />
+                            {/* <Divider /> */}
                             <div>{getDrawerChoices()}</div>
                         </Drawer>
 

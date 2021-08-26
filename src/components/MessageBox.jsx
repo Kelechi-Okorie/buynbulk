@@ -46,6 +46,10 @@ const useStyles = makeStyles(theme => ({
           maxWidth: '100%'
         },
 
+    },
+
+    button: {
+        borderRadius: '160px'
     }
 
 }));
@@ -74,10 +78,10 @@ function MessageBox(props) {
                             <TextField fullWidth variant="outlined" id="name" label="Name"className={classes.textField} />
                             <TextField fullWidth id="email" variant="outlined" label="Email" className={classes.textField} />
                             <TextField fullWidth id="subject" variant="outlined" label="Subject" className={classes.textField} />
-                            <TextField fullWidth multiline rows={4} id="message" variant="outlined" label="Message" className={classes.textField} />
+                            <TextField fullWidth multiline rows={8} id="message" variant="outlined" label="Message" className={classes.textField} />
 
                             <Box display="flex" justifyContent="center" m={3}>
-                                <Button variant="contained" fullWidth color="primary">Send</Button>
+                                <Button variant="contained" size="large" fullWidth color="primary" className={classes.button}>Send</Button>
                             </Box>
                         </form>
                     </Box>

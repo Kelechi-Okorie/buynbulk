@@ -7,7 +7,7 @@ import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 const useStyles = makeStyles(theme => ({
     root: {
         // marginLeft: 'auto',
-        borderRadius: '16px'
+        borderRadius: '160px'
     }
 }));
 

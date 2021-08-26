@@ -81,7 +81,7 @@ function Banner(props) {
                 </Typography>
 
                 <Box component="div" display="flex" justifyContent="space-around" p={2}>
-                    <Button href="/contact" variant="contained" color="primary" style={{borderRadius: '16px'}}>
+                    <Button href="/contact" variant="contained" color="primary" style={{borderRadius: '160px'}}>
                         Contact Us
                     </Button>
                     <WhatsAppButton variant="outlined" />
