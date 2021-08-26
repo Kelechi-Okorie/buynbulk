@@ -5,12 +5,10 @@ import WhatsAppButton from './WhatsAppButton';
 import BannerImage from '../img/food1.jpg'
 
 /* Material-ui */
-import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
-import Paper from '@material-ui/core/Paper';
 import Hidden from '@material-ui/core/Hidden';
 import Button from '@material-ui/core/Button';
 
@@ -91,7 +89,7 @@ function Banner(props) {
                 <Grid item sm={6} md={5}>
                     <figure className={classes.bannerFigure}>
                         {/* <img src="food1.jpg" alt="image of food" className={classes.bannerImg} /> */}
-                        <img src={BannerImage} alt="image of food" className={classes.bannerImg} />
+                        <img src={BannerImage} alt="food" className={classes.bannerImg} />
                     </figure>
                 </Grid>
             </Hidden>

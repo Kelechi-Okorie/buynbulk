@@ -16,7 +16,6 @@ import IconButton from '@material-ui/core/IconButton';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 import CloseIcon from '@material-ui/icons/Close';
 import Button from '@material-ui/core/Button';
-import Backdrop from '@material-ui/core/Backdrop';
 import Dialog from '@material-ui/core/Dialog';
 import MuiDialogTitle from '@material-ui/core/DialogTitle';
 import MuiDialogContent from '@material-ui/core/DialogContent';
@@ -57,20 +56,20 @@ const theme = createTheme({
 function CardFood(props) {
     const classes = useStyles(props);
     const [openOrderDialog, setOpenOrderDialog] = useState(false);
-    const {title: name, price: pricePerSlot, description, imageUrl} = props;
+    const {title: name, description, imageUrl} = props;
     const noOfSlots = 50;
 
-    const handleOpenOrderDialog = () => {
-        console.log('order made');
-        setOpenOrderDialog(true);
-    }
+    // const handleOpenOrderDialog = () => {
+    //     console.log('order made');
+    //     setOpenOrderDialog(true);
+    // }
     const handleCloseOrderDialog = () => {
         setOpenOrderDialog(false);
     }
 
-    const confirmOrder = () => {
-        console.log('order confirmed')
-    }
+    // const confirmOrder = () => {
+    //     console.log('order confirmed')
+    // }
 
     const OrderDialogTitle = ({children, classes, onClose, ...other}) => {
         return (
@@ -85,9 +84,9 @@ function CardFood(props) {
         )
     }
 
-    const Naira = (props) => (
-        <span>&#8358; {props.pricePerSlot}</span>
-    );
+    // const Naira = (props) => (
+    //     <span>&#8358; {props.pricePerSlot}</span>
+    // );
 
 
     return (

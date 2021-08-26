@@ -7,7 +7,6 @@ import MessageBox from '../components/MessageBox';
 import PageHeading from '../components/PageHeading';
 
 /* material-ui */
-import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
