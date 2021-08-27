@@ -4,7 +4,6 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Banner from '../components/Banner';
-// import FoodItemsContainer from '../components/FoodItemsContainer';
 import HowItWorks from '../components/HowItWorks';
 import CarouselElement from '../components/Carousel';
 import AvailableFoodItems from '../components/AvailableFoodItems';
